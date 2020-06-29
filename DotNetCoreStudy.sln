@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1145
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreStudy", "DotNetCoreStudy\DotNetCoreStudy.csproj", "{823FDFE1-5BB7-4F00-92AE-E9A0A7F98B00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreStudy", "DotNetCoreStudy\DotNetCoreStudy.csproj", "{823FDFE1-5BB7-4F00-92AE-E9A0A7F98B00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationDemo", "Samples\ConfigurationDemo\ConfigurationDemo.csproj", "{5CA3B962-6E33-4EB6-9E86-55E005444E70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigurationDemo", "Samples\ConfigurationDemo\ConfigurationDemo.csproj", "{5CA3B962-6E33-4EB6-9E86-55E005444E70}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{426D3277-07E1-4B0C-A175-1290F5386FB2}"
 EndProject
