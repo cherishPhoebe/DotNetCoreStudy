@@ -19,14 +19,18 @@ namespace ConfigurationDemo
                 { "key5","value5"}
             });
 
+
             IConfigurationRoot configurationRoot = build.Build();
 
-            Console.WriteLine(configurationRoot["key1"]);
-            Console.WriteLine(configurationRoot["key2"]);
+            //Console.WriteLine(configurationRoot["key1"]);
+            //Console.WriteLine(configurationRoot["key2"]);
 
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
+
 
             Console.ReadKey();
         }
+
+
     }
 }
