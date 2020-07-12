@@ -6,12 +6,13 @@ using System.Text.RegularExpressions;
 namespace LevenshteinDistanceDemo
 {
     public class SimilarityTool
-    {/// <summary>
-     /// Compares the two strings based on letter pair matches
-     /// </summary>
-     /// <param name="str1"></param>
-     /// <param name="str2"></param>
-     /// <returns>The percentage match from 0.0 to 1.0 where 1.0 is 100%</returns>
+    {
+        /// <summary>
+        /// Compares the two strings based on letter pair matches
+        /// </summary>
+        /// <param name="str1"></param>
+        /// <param name="str2"></param>
+        /// <returns>The percentage match from 0.0 to 1.0 where 1.0 is 100%</returns>
         public static double CompareStrings(string str1, string str2)
         {
             List<string> pairs1 = WordLetterPairs(str1.ToUpper());

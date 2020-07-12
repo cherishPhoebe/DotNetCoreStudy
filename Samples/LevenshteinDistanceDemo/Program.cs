@@ -7,17 +7,18 @@ namespace LevenshteinDistanceDemo
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            string str1 = "2009款 宝马X5自动G特别版 1.6L";
-            string str12 = "2009款 X5自动G特别版 1.6L";
-            string str2 = "X509款";
+            string str1 = "北京奔驰";
+            string str12 = "奔驰(进口)";
+            string str2 = "奔驰E级";
             Console.WriteLine("字符串1 {0}", str1);
 
             Console.WriteLine("字符串2 {0}", str2);
 
-            Console.WriteLine("相似度 {0} %", new LevenshteinDistance().LevenshteinDistancePercent(str2, str1) * 100);
+            Console.WriteLine("相似度 {0} %", new LevenshteinDistance().LevenshteinDistancePercent(str1,str2) * 100);
+            Console.WriteLine("相似度 {0} %", new LevenshteinDistance().LevenshteinDistancePercent(str12, str2) * 100);
 
-            Console.WriteLine("相似度 {0} %", SimilarityTool.CompareStrings(str2, str1) * 100);
-            Console.WriteLine("相似度 {0} %", SimilarityTool.CompareStrings(str2, str12) * 100);
+            Console.WriteLine("相似度 {0} %", SimilarityTool.CompareStrings(str1,str2) * 100);
+            Console.WriteLine("相似度 {0} %", SimilarityTool.CompareStrings(str12,str2) * 100);
 
             Console.ReadKey();
 

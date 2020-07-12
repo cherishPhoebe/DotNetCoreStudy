@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -34,6 +35,24 @@ namespace DependencyInjectionDemo
             // 瞬时生命周期
             services.AddTransient<IMyTransientService, MyTransientService>();
             #endregion
+
+            #region 
+            //直接注册实例
+            services.AddSingleton<IOrderService>(new OrderService());
+
+            // 工厂方式注册
+            //services.AddSingleton<IOrderService>(serviceProvider =>
+            //{
+            //    return new OrderServiceEx();
+            //}); 
+            //services.AddScoped<IOrderService>(serviceProvider =>
+            //{
+            //    //serviceProvider.GetService<T>();
+            //    return new OrderServiceEx();
+            //});
+            #endregion
+
+            services.TryAddSingleton<IOrderService, OrderServiceEx>();
 
             services.AddControllers();
         }

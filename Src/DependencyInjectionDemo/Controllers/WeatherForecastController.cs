@@ -56,5 +56,14 @@ namespace DependencyInjectionDemo.Controllers
 
             return 1;
         }
+
+        public int GetServiceList([FromServices] IEnumerable<IOrderService> services)
+        {
+            foreach (var item in services)
+            {
+                Console.WriteLine($"获取到服务实例：{item.ToString()}:{item.GetHashCode()}");
+            }
+            return 1;
+        }
     }
 }
