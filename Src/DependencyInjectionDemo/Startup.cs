@@ -51,8 +51,18 @@ namespace DependencyInjectionDemo
             //    return new OrderServiceEx();
             //});
             #endregion
-
+            // ³¢ÊÔ×¢²á
             services.TryAddSingleton<IOrderService, OrderServiceEx>();
+
+            services.TryAddEnumerable(ServiceDescriptor.Singleton<IOrderService, OrderService>());
+            services.TryAddEnumerable(ServiceDescriptor.Singleton<IOrderService, OrderServiceEx>());
+
+
+            services.RemoveAll<IOrderService>();
+            services.Replace(ServiceDescriptor.Singleton<IOrderService, OrderServiceEx>());
+
+            // ·ºÐÍÄ£°å×¢²á
+            services.AddSingleton(typeof(IGenericService<>),typeof(GenericService<>));
 
             services.AddControllers();
         }

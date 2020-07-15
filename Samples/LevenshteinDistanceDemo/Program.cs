@@ -14,11 +14,13 @@ namespace LevenshteinDistanceDemo
 
             Console.WriteLine("字符串2 {0}", str2);
 
-            Console.WriteLine("相似度 {0} %", new LevenshteinDistance().LevenshteinDistancePercent(str1,str2) * 100);
+            Console.WriteLine("相似度 {0} %", new LevenshteinDistance().LevenshteinDistancePercent(str1, str2) * 100);
             Console.WriteLine("相似度 {0} %", new LevenshteinDistance().LevenshteinDistancePercent(str12, str2) * 100);
 
-            Console.WriteLine("相似度 {0} %", SimilarityTool.CompareStrings(str1,str2) * 100);
-            Console.WriteLine("相似度 {0} %", SimilarityTool.CompareStrings(str12,str2) * 100);
+            Console.WriteLine("相似度 {0} %", SimilarityTool.CompareStrings(str1, str2) * 100);
+            Console.WriteLine("相似度 {0} %", SimilarityTool.CompareStrings(str12, str2) * 100);
+
+           
 
             Console.ReadKey();
 
