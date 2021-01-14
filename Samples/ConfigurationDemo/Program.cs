@@ -1,6 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ConfigurationDemo
 {
@@ -19,6 +22,11 @@ namespace ConfigurationDemo
                 { "key5","value5"}
             });
 
+            int[] arr = { 22, 23, 89, 90, 90, 67 };
+
+            var secondValue = arr.ToList().Where(x => x < arr.Max()).OrderByDescending(x => x).FirstOrDefault();
+
+            // Console.WriteLine(secondValue);
 
             IConfigurationRoot configurationRoot = build.Build();
 
@@ -27,6 +35,23 @@ namespace ConfigurationDemo
 
             //Console.WriteLine("Hello World!");
 
+
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("请输入字符串：");
+                    var str = Console.ReadLine();   //记录输入的数
+                    if (str.ToUpper() == "Q")
+                        break;
+
+                    Console.WriteLine("字节长度:{0}", Encoding.UTF8.GetByteCount(str));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("请输入自然数,错误为{0}", ex.Message);
+                }
+            }
 
             Console.ReadKey();
         }
