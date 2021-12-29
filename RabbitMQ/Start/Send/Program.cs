@@ -1,5 +1,6 @@
 ﻿using RabbitMQ.Client;
 using System;
+using System.Text;
 
 namespace Send
 {
@@ -19,12 +20,19 @@ namespace Send
                                          arguments: null);
 
                     string message = "Hello World";
-                    var body
+                    var body = Encoding.UTF8.GetBytes(message);
 
+                    channel.BasicPublish(exchange: "",
+                                         routingKey: "hello",
+                                         basicProperties: null,
+                                         body: body);
+
+                    Console.WriteLine("[X] send {0}", message);
                 }
             }
 
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(" Press [enter] to exit.");
+            Console.ReadLine();
         }
     }
 }
