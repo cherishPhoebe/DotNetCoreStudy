@@ -33,5 +33,15 @@ namespace ExceptionFilterDemo.Controllers
             })
             .ToArray();
         }
+
+        [HttpPost]
+        public Task Test1(bool triggerException)
+        {
+            if (triggerException) {
+                throw new Exception();
+            }
+
+            return Task.CompletedTask;
+        }
     }
 }

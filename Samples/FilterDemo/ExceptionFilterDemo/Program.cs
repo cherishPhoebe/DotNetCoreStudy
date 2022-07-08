@@ -20,6 +20,7 @@ try
     builder.Services.Configure<MvcOptions>(opt =>
     {
         opt.Filters.Add<SampleExceptionFilter>();
+        opt.Filters.Add<LogExceptionFilter>();
     });
 
     // NLog: Setup NLog for Dependency injection
