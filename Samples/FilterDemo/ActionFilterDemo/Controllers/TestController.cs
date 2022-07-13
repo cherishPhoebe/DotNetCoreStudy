@@ -2,11 +2,13 @@
 
 namespace ActionFilterDemo.Controllers
 {
-    public class TestController : Controller
+    [ApiController]
+    [Route("[controller]/[action]")]
+    public class TestController : ControllerBase
     {
         public IActionResult Index()
         {
-            return View();
+            return Ok();
         }
     }
 }
