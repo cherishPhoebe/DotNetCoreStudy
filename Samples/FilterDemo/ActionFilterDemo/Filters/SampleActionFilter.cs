@@ -19,7 +19,8 @@ namespace ActionFilterDemo.Filters
             var isNoLog = false;
             if (context.ActionDescriptor is ControllerActionDescriptor) {
                 var controllerActionDescriptor = context.ActionDescriptor as ControllerActionDescriptor;
-                isNoLog = controllerActionDescriptor.MethodInfo.IsDefined(typeof(NoLogAttribute),true);
+
+                isNoLog = controllerActionDescriptor.ControllerTypeInfo.GetCustomAttributes(typeof(NoLogAttribute), true).Any() || controllerActionDescriptor.MethodInfo.GetCustomAttributes(typeof(NoLogAttribute),true).Any();
             }
             if (isNoLog)
             {

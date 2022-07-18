@@ -1,9 +1,11 @@
+using ActionFilterDemo.Attributes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ActionFilterDemo.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
+    [NoLogAttribute]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
